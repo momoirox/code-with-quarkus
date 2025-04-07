@@ -1,4 +1,4 @@
-package org.quarkus.tutorial.model;
+package org.quarkus.tutorial.persistence;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
