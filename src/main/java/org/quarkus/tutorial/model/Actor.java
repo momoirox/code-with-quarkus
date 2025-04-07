@@ -1,10 +1,8 @@
 package org.quarkus.tutorial.model;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
-import jakarta.persistence.AttributeOverride;
-import jakarta.persistence.AttributeOverrides;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
@@ -19,10 +17,11 @@ import org.hibernate.annotations.ColumnDefault;
 @Getter
 @Setter
 @Table(name = "actor")
-@AttributeOverrides({
-    @AttributeOverride(name = "id", column = @Column(name = "actor_id", nullable = false))
-})
-public class Actor extends PanacheEntity {
+public class Actor {
+
+    @Id
+    @Column(name = "actor_id", nullable = false)
+    private Short id;
 
     @Size(max = 45)
     @NotNull
